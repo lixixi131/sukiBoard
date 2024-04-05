@@ -4,6 +4,7 @@ import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +32,7 @@ public class Comment {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int no;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String Comment;
 	@ManyToOne
 	private User user;

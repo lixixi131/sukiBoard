@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 
 import com.example.board.dto.UserDto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,8 +29,11 @@ public class User{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int no;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String id;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String password;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String nickName;
 	
 	

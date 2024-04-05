@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +32,9 @@ public class Post {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int no;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String title;
+	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String content;
 	@ManyToOne
 	private User user;
