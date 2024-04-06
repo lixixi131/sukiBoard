@@ -32,7 +32,6 @@ public class Comment {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int no;
-	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String Comment;
 	@ManyToOne
 	private User user;

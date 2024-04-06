@@ -32,9 +32,7 @@ public class Post {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int no;
-	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String title;
-	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
 	private String content;
 	@ManyToOne
 	private User user;
