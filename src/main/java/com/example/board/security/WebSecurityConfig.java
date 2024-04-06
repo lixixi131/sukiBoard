@@ -39,7 +39,7 @@ public class WebSecurityConfig	  {
                 .formLogin( c -> c.disable())
                 .authorizeHttpRequests( (auth) -> {
                 	auth
-        
+                		
                 		.requestMatchers("/post").permitAll()
                 		.requestMatchers("/comment/list").permitAll()
                 		.requestMatchers("/post/search").permitAll()
@@ -57,6 +57,25 @@ public class WebSecurityConfig	  {
         //return http.addFilterBefore(jwtAuthenticationFilter, BasicAuthenticationFilter.class).build();
     }
     
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+    	CorsConfiguration config = new CorsConfiguration();
+    	
+    	config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOrigin("http://ec2-54-180-91-222.ap-northeast-2.compute.amazonaws.com:8080"); // 프론트 IPv4 주소
+
+    	config.addAllowedMethod("*");
+    	config.addAllowedHeader("*");
+        config.addAllowedHeader("*");
+        config.setAllowCredentials(true);
+    	
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+    	return source;
+    	
+    	
+    }
 
     
     @Bean
