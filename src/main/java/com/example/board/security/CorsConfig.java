@@ -17,7 +17,7 @@ public class CorsConfig {
 
         config.setAllowCredentials(true);
         config.setAllowedOrigins(List.of("http://localhost:3000"));
-        config.addAllowedOrigin("http://ec2-13-209-3-178.ap-northeast-2.compute.amazonaws.com"); // 프론트 IPv4 주소
+        config.addAllowedOrigin("http://ec2-3-39-234-170.ap-northeast-2.compute.amazonaws.com"); // 프론트 IPv4 주소
 
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
